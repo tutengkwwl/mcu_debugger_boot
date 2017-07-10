@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F207xx,USE_USB_FS</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Drivers\CMSIS\Include;..\Drivers\STM32F2xx_HAL_Driver\Inc;..\Drivers\STM32F2xx_HAL_Driver\Inc\Legacy;..\App;..\Drivers\CMSIS\Device\ST\STM32F2xx\Include;..\plc_core\inc;..\plc_core\;..\STM32_USB_Device_Library\Inc</IncludePath>
+              <IncludePath>..\Drivers\CMSIS\Include;..\Drivers\STM32F2xx_HAL_Driver\Inc;..\Drivers\STM32F2xx_HAL_Driver\Inc\Legacy;..\App;..\Drivers\CMSIS\Device\ST\STM32F2xx\Include;..\plc_core\inc;..\plc_core\;..\USB_Device_Library\Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -482,32 +482,32 @@
             <File>
               <FileName>usbd_core.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\STM32_USB_Device_Library\Src\usbd_core.c</FilePath>
+              <FilePath>..\USB_Device_Library\Src\usbd_core.c</FilePath>
             </File>
             <File>
               <FileName>usbd_ctlreq.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\STM32_USB_Device_Library\Src\usbd_ctlreq.c</FilePath>
+              <FilePath>..\USB_Device_Library\Src\usbd_ctlreq.c</FilePath>
             </File>
             <File>
               <FileName>usbd_ioreq.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\STM32_USB_Device_Library\Src\usbd_ioreq.c</FilePath>
+              <FilePath>..\USB_Device_Library\Src\usbd_ioreq.c</FilePath>
             </File>
             <File>
               <FileName>usbd_desc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\STM32_USB_Device_Library\Src\usbd_desc.c</FilePath>
+              <FilePath>..\USB_Device_Library\Src\usbd_desc.c</FilePath>
             </File>
             <File>
               <FileName>usbd_conf.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\STM32_USB_Device_Library\Src\usbd_conf.c</FilePath>
+              <FilePath>..\USB_Device_Library\Src\usbd_conf.c</FilePath>
             </File>
             <File>
               <FileName>usbd_hid.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\STM32_USB_Device_Library\Src\usbd_hid.c</FilePath>
+              <FilePath>..\USB_Device_Library\Src\usbd_hid.c</FilePath>
             </File>
           </Files>
         </Group>

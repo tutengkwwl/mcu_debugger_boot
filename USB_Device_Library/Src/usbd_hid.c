@@ -141,75 +141,32 @@ USBD_ClassTypeDef  USBD_HID =
 
 /* USB HID device Configuration Descriptor */
 __ALIGN_BEGIN static uint8_t USBD_HID_CfgDesc[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
-#if 0
-{
-  0x09, /* bLength: Configuration Descriptor size */
-  USB_DESC_TYPE_CONFIGURATION, /* bDescriptorType: Configuration */
-  USB_HID_CONFIG_DESC_SIZ,
-  /* wTotalLength: Bytes returned */
-  0x00,
-  0x01,         /*bNumInterfaces: 1 interface*/
-  0x01,         /*bConfigurationValue: Configuration value*/
-  0x00,         /*iConfiguration: Index of string descriptor describing
-  the configuration*/
-  0xE0,         /*bmAttributes: bus powered and Support Remote Wake-up */
-  0x32,         /*MaxPower 100 mA: this current is used for detecting Vbus*/
-  
-  /************** Descriptor of Joystick Mouse interface ****************/
-  /* 09 */
-  0x09,         /*bLength: Interface Descriptor size*/
-  USB_DESC_TYPE_INTERFACE,/*bDescriptorType: Interface descriptor type*/
-  0x00,         /*bInterfaceNumber: Number of Interface*/
-  0x00,         /*bAlternateSetting: Alternate setting*/
-  0x04,         /*bNumEndpoints*/
-  0xff,         /*bInterfaceClass: HID*/
-  0xff,         /*bInterfaceSubClass : 1=BOOT, 0=no boot*/
-  0xff,         /*nInterfaceProtocol : 0=none, 1=keyboard, 2=mouse*/
-  0,            /*iInterface: Index of string descriptor*/
-  /******************** Descriptor of Joystick Mouse HID ********************/
-  /******************** Descriptor of Mouse endpoint ********************/
-  /* 27 */
-  0x07,          /*bLength: Endpoint Descriptor size*/
-  USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
-  
-  0x81,//HID_EPIN_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
-  0x02,//0x03,          /*bmAttributes: Interrupt endpoint*/
-  0x40, 0x00,//HID_EPIN_SIZE, /*wMaxPacketSize: 4 Byte max */
-  0x00,
-  //HID_FS_BINTERVAL,          /*bInterval: Polling Interval (10 ms)*/
-	0x07,
-	USB_DESC_TYPE_ENDPOINT,
-	0x01, /* endpoint 1 OUT */
-	0x02, /* bulk transfer = 02H */
-	0x40,0x00, /* endpoint max packet size = 0040H */
-	0x00, /* the value is invalid when bulk transfer */
-	0x07, /* endpoint descriptor length = 07H */
-	USB_DESC_TYPE_ENDPOINT, /* endpoint descriptor type = 05H */
-	0x82, /* endpoint 2 IN */
-	0x02, /* bulk transfer = 02H */
-	0x40,0x00, /* endpoint max packet size = 0040H */
-	0x00, /* the value is invalid when bulk transfer */
-	0x07, /* endpoint descriptor length = 07H */
-	USB_DESC_TYPE_ENDPOINT, /* endpoint descriptor type = 05H */
-	0x02, /* endpoint 2 OUT */
-	0x02, /* bulk transfer = 02H */
-	0x40,0x00, /* endpoint max packet size = 0040H */
-	0x00, /* the value is invalid when bulk transfer */
-} ;
-#else
 {
     0x09, /* bLength: Configuration Descriptor size */
     USB_DESC_TYPE_CONFIGURATION, /* bDescriptorType: Configuration */
     USB_HID_CONFIG_DESC_SIZ,
     /* wTotalLength: Bytes returned */
     0x00,
-    0x01,         /*bNumInterfaces: 1 interface*/
+    0x03,         /*bNumInterfaces: 3 interface*/
     0x01,         /*bConfigurationValue: Configuration value*/
-    0x00,         /*iConfiguration: Index of string descriptor describing
-    the configuration*/
+    0x00,         /*iConfiguration: Index of string descriptor describing the configuration*/
     0xE0,         /*bmAttributes: bus powered and Support Remote Wake-up */
     0x32,         /*MaxPower 100 mA: this current is used for detecting Vbus*/
 
+    /* IAD For CDC */
+    0x08,        // bLength: Interface Descriptor size
+    0x0B,        // bDescriptorType: IAD
+    0x01,        // bFirstInterface
+    0x02,        // bInterfaceCount
+    0x02,        // bFunctionClass: CDC
+    0x02,        // bFunctionSubClass
+    0x01,        // bFunctionProtocol
+    0x04,        //!! string descriptor for this interface
+
+
+
+    
+    
     /************** Descriptor of Joystick Mouse interface ****************/
     /* 09 */
     0x09,         /*bLength: Interface Descriptor size*/
